@@ -1,0 +1,8 @@
+#catatan.txt
+I find a ture answaer, i belive.
+delete all the svc. pods deployment , secret ,rs, cs, use yaml file when you apply except kube-system namespace
+like the under.
+kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml
+and apply the new
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml
+and everthing looks like good .

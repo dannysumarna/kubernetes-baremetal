@@ -1,0 +1,26 @@
+#skrip-run-openssl-5000.txt
+Buat Self Certificate
+Cek openssl version : v1.1.1
+	>$ openssl version
+
+Opsi 1:
+	>$ mkdir -p certs
+	>$ openssl req \
+      -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+      -addext "subjectAltName = DNS:docker.codephile.com" \
+      -x509 -days 365 -out certs/domain.crt
+Opsi 2:
+Edit file
+	>$ vi /etc/ssl/openssl.cnf
+
+cari di section:
+set IP
+	[ v3_ca ]
+	subjectAltName=IP:IP_ADDRESS_OF_YOUR_VM
+atau
+set DNS
+	subjectAltName=DNS:docker.codephile.com
+
+	>$ openssl req \
+      -newkey rsa:4096 -nodes -sha256 -keyout domain.key \
+      -x509 -days 365 -out domain.crt

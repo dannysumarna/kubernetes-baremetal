@@ -1,0 +1,93 @@
+#history-sample-yaml.txt
+➜  calico ls
+buat-new-ippool.yaml  custom-resources.yaml  disable-default.yaml  kubectl-calico  old-pool.yaml
+➜  calico cat buat-new-ippool.yaml 
+#calicoctl create -f -<<EOF
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: new-pool
+spec:
+  cidr: 10.0.0.0/16
+  ipipMode: Always
+  natOutgoing: true
+
+➜  calico cat custom-resources.yaml 
+# This section includes base Calico installation configuration.
+# For more information, see: https://docs.projectcalico.org/v3.21/reference/installation/api#operator.tigera.io/v1.Installation
+apiVersion: crd.projectcalico.org/v1
+kind: Installation
+metadata:
+  name: default
+spec:
+  # Configures Calico networking.
+  calicoNetwork:
+    # Note: The ipPools section cannot be modified post-install.
+    ipPools:
+    - blockSize: 26
+      cidr: 192.168.0.0/16
+      encapsulation: VXLANCrossSubnet
+      natOutgoing: Enabled
+      nodeSelector: all()
+
+---
+
+# This section configures the Calico API server.
+# For more information, see: https://docs.projectcalico.org/v3.21/reference/installation/api#operator.tigera.io/v1.APIServer
+apiVersion: crd.projectcalico.org/v1
+kind: APIServer 
+metadata: 
+  name: default 
+spec: {}
+
+➜  calico cat disable-default.yaml 
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: default-ipv4-ippool
+spec:
+  cidr: 192.168.0.0/16
+  ipipMode: Always
+  natOutgoing: true
+  disabled: true
+➜  calico cat old-pool.yaml 
+apiVersion: projectcalico.org/v3
+items:
+- apiVersion: projectcalico.org/v3
+  kind: IPPool
+  metadata:
+    creationTimestamp: "2021-11-04T09:29:10Z"
+    name: default-ipv4-ippool
+    resourceVersion: "2387"
+    uid: c4db78e6-329b-477a-8d46-5ba6fde58596
+  spec:
+    allowedUses:
+    - Workload
+    - Tunnel
+    blockSize: 26
+    cidr: 192.168.0.0/16
+    ipipMode: Always
+    natOutgoing: true
+    nodeSelector: all()
+    vxlanMode: Never
+- apiVersion: projectcalico.org/v3
+  kind: IPPool
+  metadata:
+    creationTimestamp: "2021-11-10T18:51:52Z"
+    name: new-pool
+    resourceVersion: "261833"
+    uid: 87cf968b-de66-42fc-9799-628f69770945
+  spec:
+    allowedUses:
+    - Workload
+    - Tunnel
+    blockSize: 26
+    cidr: 10.0.0.0/16
+    ipipMode: Always
+    natOutgoing: true
+    nodeSelector: all()
+    vxlanMode: Never
+kind: IPPoolList
+metadata:
+  resourceVersion: "262018"
+➜  calico 

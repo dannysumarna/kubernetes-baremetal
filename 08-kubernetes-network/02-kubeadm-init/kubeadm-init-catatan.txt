@@ -1,0 +1,7 @@
+#kubeadm-init-catatan.txt
+
+21 Nov
+>$ kubeadm join 192.168.10.121:6443 --token rj8hfk.6yexdaxnpsxbf9ir \
+	--discovery-token-ca-cert-hash sha256:2cef9996b224cec787417da484af7f49bf75f3d43ad0ae21dcfccfdcf974365d
+
+	>$ kubectl -n kube-system get cm kubeadm-config -o yaml

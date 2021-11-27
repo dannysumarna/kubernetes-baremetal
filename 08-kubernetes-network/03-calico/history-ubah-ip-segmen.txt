@@ -1,0 +1,175 @@
+#history-ubah-ip-segmen.txt
+675  mkdir calico
+  676  cd ca
+  677  cd calico
+  678  ls
+  679  curl -o kubectl-calico -O -L  "https://github.com/projectcalico/calicoctl/releases/download/v3.21.0/calicoctl" 
+  680  chmod +x kubectl-calico
+  681  kubectl calico -h
+  682  path
+  683  PATH
+  684  type kubectl
+  685  ls
+  686  ls -a
+  687  cd /usr/bin/
+  688  ls
+  689  cd ~/
+  690  ls
+  691  cd kubernetes
+  692  cd ..
+  693  cd calico
+  694  ls
+  695  kubectl
+  696  type kubectl
+  697  ls
+  698  cp kubectl-calico /usr/bin/kubectl-calico
+  699  kubectl calico -h
+  700  kubectl get all -A
+  701  kubectl logs <pod name> -c calico-node
+  702  kubectl logs pod/nginx-ingress-8l4s4 -c calico-node -n mushola-02
+  703  kubectl get all -A
+  704  kubectl logs pod/nginx-ingress-8l4s4 -c calico-node -n mushola-02
+  705  kubectl logs pod/nginx-ingress-8l4s4 -c calico-node -n masjid-02
+  706  kubectl logs pod/calico-node-ldcs6 -c calico-node -n masjid-02
+  707  kubectl logs pod/calico-node-ldcs6 -c calico-node -n kube-system
+  708  type kubeadm-config
+  709  kubeadm
+  710  type kubeadm
+  711  cd /usr/bin/kubeadm
+  712  cd /usr/bin/
+  713  ls
+  714  type kubadm
+  715  type kubeadm
+  716  ls
+  717  cd ~/
+  718  ls
+  719  cd calico
+  720  ls
+  721  wget https://docs.projectcalico.org/manifests/custom-resources.yaml
+  722  ls
+  723  vi custom-resources.yaml
+  724  kubectl create -f custom-resources.yaml
+  725  vi custom-resources.yaml
+  726  kubectl create -f custom-resources.yaml
+  727  vi custom-resources.yaml
+  728  kubectl create -f https://raw.githubusercontent.com/projectcalico/calico-cni/k8s-1.1-docs/samples/kubernetes/master/dns/skydns.yaml
+  729  kubectl create -f https://raw.githubusercontent.com/projectcalico/calico-cni/k8s-1.1-docs/samples/kubernetes/master/kube-ui/kube-ui.yaml
+  730  vi custom-resources.yaml
+  731  kubectl create -f https://raw.githubusercontent.com/projectcalico/calico-cni/k8s-1.1-docs/samples/kubernetes/master/kube-ui/kube-ui.yaml
+  732  kubectl get all -A
+  733  ls
+  734  kubectl-calico get ippool -o wide
+  735  kubectl-calico get ippool -o wide --allow-version-mismatch
+  736  vi buat-new-ippool.yaml
+  737  kube-calico apply -f buat-new-ippool.yaml
+  738  ls
+  739  kubectl-calico apply -f buat-new-ippool.yaml
+  740  kubectl-calico apply -f buat-new-ippool.yaml --allow-version-mismatch
+  741  vi buat-new-ippool.yaml
+  742  kubectl-calico apply -f buat-new-ippool.yaml --allow-version-mismatch
+  743  vi buat-new-ippool.yaml
+  744  kubectl-calico apply -f buat-new-ippool.yaml --allow-version-mismatch
+  745  vi buat-new-ippool.yaml
+  746  kubectl-calico apply -f buat-new-ippool.yaml --allow-version-mismatch
+  747  kubectl-calico get ippool -o wide
+  748  kubectl-calico get ippool -o wide --allow-version-mismatch
+  749  kubectl-calico get ippool -o yaml > old-pool.yaml
+  750  kubectl-calico get ippool -o yaml > old-pool.yaml --allow-version-mismatch
+  751  vi old-pool.yaml
+  752  ls
+  753  vi old-pool.yaml
+  754  vi disable-default.yaml
+  755  ls
+  756  kubectl-calico apply -f disable-default.yaml --allow-version-mismatch
+  757  vi disable-default.yaml
+  758  kubectl-calico apply -f disable-default.yaml --allow-version-mismatch
+  759  vi disable-default.yaml
+  760  kubectl-calico apply -f disable-default.yaml --allow-version-mismatch
+  761  kubectl-calico get ippool -o wide --allow-version-mismatch
+  762  kubectl-calico get wep --all-namespaces
+  763  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  764  kubectl delete pod -n kube-system kube-dns-v9-dr4z8
+  765  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  766  kubectl get pod -A
+  767  kubectl logs nginx-ingress-8l4s4 -n masjid-02
+  768  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  769  kubectl get pod -A
+  770  kubectl logs kube-dns-v9-wkfv7 -n kube-system
+  771  kubectl get pod -A
+  772  kubectl delete pod nginx-ingress-8l4s4 -n masjid-02
+  773  kubectl get pod -A
+  774  kubectl logs nginx-ingress-nbrsz -n masjid-02
+  775  ls
+  776  kubectl get pod -A
+  777  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  778  kubectl delete kube-ui-v4-d54fx -n kube-system
+  779  kubectl delete pod kube-ui-v4-d54fx -n kube-system
+  780  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  781  kubectl delete pod coredns-78fcd69978-rrcrf -n kube-system
+  782  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  783  kubectl delete pod coredns-78fcd69978-fq9qk -n kube-system
+  784  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  785  kubectl delete pod calico-kube-controllers-75f8f6cc59-brvgj -n kube-system
+  786  kubectl-calico get wep --all-namespaces --allow-version-mismatch
+  787  kubectl get all -A
+  788  kubectl delete pod pod/kube-dns-v9-wkfv7 -n kube-system
+  789  kubectl delete pod kube-dns-v9-wkfv7 -n kube-system
+  790  kubectl delete pod/coffee-6f4b79b975-7v5pz -n mushola-02
+  791  kubectl delete pod/coffee-6f4b79b975-qjdnj -n mushola-02
+  792  kubectl delete pod/tea-6fb46d899f-7nl62 -n mushola-02
+  793  kubectl delete pod/tea-6fb46d899f-khsg5 -n mushola-02
+  794  kubectl get all -A
+  795  kubectl describe pod/kube-dns-v9-djr54 -n kube-system
+  796  reboot
+  797  kubectl get all -A
+  798  systemctl poweroff
+  799  kubectl get all -A
+  800  kubectl version
+  801  kubectl get all -A
+  802  kubectl describe daemonset.apps/kube-proxy -n kube-system
+  803  :q
+  804  ls
+  805  kubectl get all -A
+  806  kubectl describe pod/kube-dns-v9-djr54 -n kube-system
+  807  kubectl logs pod/kube-dns-v9-djr54 -n kube-system
+  808  kubectl-calico delete pool default-ipv4-ippool
+  809  kubectl-calico delete pool default-ipv4-ippool --allow-version-mismatch
+  810  kubectl get all -A
+  811  vi /etc/resolv.conf
+  812  vi /etc/hosts
+  813  vi /etc/kubernetes/worker-kubeconfig.yaml
+  814  curl http://docker.codephile.com
+  815  curl http://docker.codephile.com:31061
+  816  curl http://kubenode03.codephile.com:31061
+  817  curl cafe.example.com/tea
+  818  ping cafe.example.com
+  819  vi /etc/hosts
+  820  ping cafe.example.com
+  821  curl cafe.example.com/tea
+  822  kubectl api-resources
+  823  curl http://192.168.10.58:8081/
+  824  curl http://192.168.10.58:8081/01-ingress-controller/
+  825  curl http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/
+  826  curl http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/kubectl-install/
+  827  curl http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/kubectl-install/kopi-test-example.yaml
+  828  kubectl apply -f http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/kubectl-install/kopi-test-example.yaml
+  829  curl http://cafe.example.com
+  830  curl http://cafe.example.com/tea
+  831  curl http://cafe.example.com/coffe
+  832  curl http://cafe.example.com/coffee
+  833  ls
+  834  cd latihan
+  835  ls
+  836  cd ..
+  837  curl http://cafe.example.com/coffee
+  838  kubectl get all -A
+  839  curl http://cafe.example.com/coffee
+  840  kubectl apply -f http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/kubectl-install/kopi-test-example.yaml
+  841  curl http://cafe.example.com/coffee
+  842  curl https://cafe.example.com/coffee
+  843  curl https://cafe.example.com/coffee -k
+  844  kubectl apply -f http://192.168.10.58:8081/01-ingress-controller/03-ingress-nginxinc/kubectl-install/kopi-test-example.yaml
+  845  systemctl poweroff
+  846  ls
+  847  cat calico.yaml
+  848  kubectl get all -A

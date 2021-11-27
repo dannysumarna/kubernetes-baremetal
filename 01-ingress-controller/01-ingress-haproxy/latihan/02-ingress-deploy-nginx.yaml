@@ -1,0 +1,29 @@
+#02-ingress-deploy-nginx.yaml
+#haproxytech.ingress.kubernetes.io.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-deploy-nginx
+  annotations:
+    ingress.class: "haproxy"
+    ingress.kubernetes.io/path-rewrite: /
+  namespace: testing  
+spec:
+  rules:
+    - host: hello.testing.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-deploy-main
+                port:
+                  number: 80
+          #- path: /v2
+          #  pathType: Prefix
+          #  backend:
+          #    service:
+          #      name: web2
+          #      port:
+          #        number: 8080         

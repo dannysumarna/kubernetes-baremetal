@@ -1,0 +1,93 @@
+#openldap-composer.yaml
+version: "3.9"
+services:
+  openldap:
+    container_name: openldap-eoffice
+    image: bitnami/openldap:2.5.9
+    restart: always
+    ports:
+      - 1389:1389
+      - 1636:1636
+    environment:
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=c0d3ph1l3
+      - LDAP_CUSTOM_LDIF_DIR=/ldifs
+      - LDAP_CUSTOM_SCHEMA_FILE=/schema/custom.ldif
+      - LDAP_ULIMIT_NOFILES=1024
+      - LDAP_ALLOW_ANON_BINDING=yes
+      - LDAP_CONFIG_ADMIN_ENABLED=yes
+      - LDAP_CONFIG_ADMIN_USERNAME=ldapadm
+      - LDAP_CONFIG_ADMIN_PASSWORD=c0d3ph1l3
+      - LDAP_EXTRA_SCHEMAS=cosine,inetorgperson,nis
+      #- LDAP_USERS=user01,user02
+      #- LDAP_PASSWORDS=password1,password2
+    #networks:
+    #  - my-network
+    volumes:
+      - /root/docker/docker-openldap/custom:/ldifs
+      - eoffice-openldap-kemenag-01:/bitnami/openldap
+  #myapp:
+  #  image: 'YOUR_APPLICATION_IMAGE'
+  #  networks:
+  #    - my-network
+volumes:
+  openldap_data:
+    driver: local
+#volumes:
+#  eoffice-openldap-kemenag-01:
+#    external: true
+
+
+
+#services:
+  #registry:
+    #container_name: mongo-eoffice
+    #image: mongo:5.0.2
+    #restart: always
+    #ports:
+    #  - 27017:27017
+    #networks:
+    #  - registry-net-front
+    #  - registry-net-back
+    #environment:
+    #  - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt
+    #  - REGISTRY_HTTP_TLS_KEY=/certs/domain.key
+    #  #- REGISTRY_AUTH: htpasswd
+    #  #- REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+    #  #- REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+    #volumes:
+    #  - eoffice-mongo-kemenag-01:/data/db
+    #  - registry-images-data:/var/lib/registry
+    #  - /root/docker/certs:/certs
+    #depends_on:
+    #  - redis
+  #redis:
+  #  container_name: redis-registry
+  #  image: redis:5
+  #  restart: always
+  #  ports:
+  #    - 6379:6379
+  #  networks:
+  #    - registry-net-back
+  #  volumes:
+  #    - registry-redis-data:/data  #redis data
+
+#volumes:
+#  eoffice-mongo-kemenag-01:
+#    external: true
+#  registry-redis-data:
+#    external: true
+#  registry-images-data:
+#    external: true
+   
+#networks:
+#  # The presence of these objects is sufficient to define them
+#  registry-net-front:
+#    name: registry-net-front
+#  registry-net-back:
+#    name: registry-net-back
+
+#networks:
+#  my-network:
+#    driver: bridge
+

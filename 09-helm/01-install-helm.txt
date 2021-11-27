@@ -1,0 +1,13 @@
+#01-install-helm.txt
+
+#Download
+wget https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz
+
+#ekstrak
+tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
+
+#move
+mv linux-amd64/helm /usr/local/bin/helm
+
+
+

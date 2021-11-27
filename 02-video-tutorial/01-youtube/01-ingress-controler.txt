@@ -1,0 +1,8 @@
+#01-ingress-controler.txt
+
+#ingress-nginx/ingress-nginx + metallb
+https://www.youtube.com/watch?v=UvwtALIb2U8
+
+
+#Bencmarking ingress controller
+https://www.youtube.com/watch?v=WWGGoHPIvTE

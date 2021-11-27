@@ -1,0 +1,36 @@
+#deploy-nginx-01.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-main
+  labels:
+    run: nginx-eoffice-test
+  #annotations:
+  #  annotation-key1: annotation-value1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: nginx-eoffice-test
+  template:
+    metadata:
+      name: nginx-eoffice-test
+      labels:
+        run: nginx-eoffice-test
+    spec:
+      nodeSelector:
+        eoffice: node03
+      containers:
+      - name: nginx-eoffice-test
+        image: gcr.io/google-samples/hello-app:1.0
+        ports:
+        - containerPort: 80
+        #readinessProbe:
+        #  httpGet:
+        #    path: /health
+        #    port: 80
+        #  initialDelaySeconds: 60
+        #  periodSeconds: 60
+        #  failureThreshold: 3
+        #  successThreshold: 1
+        #  timeoutSeconds: 1

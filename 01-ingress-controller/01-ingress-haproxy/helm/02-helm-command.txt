@@ -1,0 +1,21 @@
+#helm-command.txt
+
+	>$ helm search repo ingress
+
+	>$ helm repo add haproxytech https://haproxytech.github.io/helm-charts
+
+	>$ helm repo update
+
+	>$ helm repo list
+
+	>$ helm search repo ingress
+
+
+	>$ helm search repo haproxytech/
+	>$ helm install my-release haproxytech/<chart>
+
+
+
+
+edit yaml nya:
+	>$ helm show values ingress-nginx/ingress-nginx > ingress-nginx.yaml

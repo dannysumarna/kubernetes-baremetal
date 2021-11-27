@@ -1,0 +1,18 @@
+#catatan-network.txt
+
+>$ netstat -atpn
+
+#dapetin podCIDR
+>$ kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
+>$ kubectl cluster-info dump | grep -m 1 cluster-cidr
+
+#weave
+>$ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+#flannel
+>$ kubeadm init --apiserver-advertise-address=10.0.15.10 --pod-network-cidr=10.244.0.0/16
+
+>$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+
+>$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml

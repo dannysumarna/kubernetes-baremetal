@@ -1,0 +1,15 @@
+#install-calicoctl.txt
+
+>$ wget https://github.com/projectcalico/calicoctl/releases/download/3.20.0/calicoctl
+>$ chmod +x calicoctl
+>$ sudo mv calicoctl /usr/local/bin/
+
+
+>$ cd /usr/bin
+>$ curl -o calicoctl -O -L  "https://github.com/projectcalico/calicoctl/releases/download/v3.21.0/calicoctl" 
+>$ chmod +x calicoctl
+>$ calicoctl get ippool -o wide --allow-version-mismatch
+
+>$ curl -o calicoctl -O -L  "https://github.com/projectcalico/calicoctl/releases/download/v3.20.0/calicoctl" 
+
+>$ curl -o kubectl-calico -O -L  "https://github.com/projectcalico/calicoctl/releases/download/v3.21.0/calicoctl" 

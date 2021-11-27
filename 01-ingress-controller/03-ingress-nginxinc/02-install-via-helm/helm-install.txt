@@ -1,0 +1,48 @@
+#helm-install.txt
+
+helm install my-release nginx-stable/nginx-ingress
+
+
+>$ helm upgrade --install nginxinc-01 nginx-ingress \
+  		--repo https://helm.nginx.com/stable \
+  		--namespace masjid-01 \
+		--create-namespace \
+		--set controller.service.nodePorts.http=30000 \
+  		--set controller.service.nodePorts.https=30001 \
+  		--set controller.service.nodePorts.stat=30002 \
+  		--set controller.startupProbe.port=1024 \
+  		--set controller.startupProbe.failureThreshold=30 \
+  		--set controller.startupProbe.initialDelaySeconds=30 \
+  		--set controller.startupProbe.periodSeconds=30 \
+  		--set controller.readinessProbe.port=1024 \
+  		--set controller.readinessProbe.failureThreshold=30 \
+  		--set controller.readinessProbe.initialDelaySeconds=30 \
+  		--set controller.readinessProbe.periodSeconds=30 \
+  		--set controller.livenessProbe.port=1024 \
+  		--set controller.livenessProbe.failureThreshold=30 \
+  		--set controller.livenessProbe.initialDelaySeconds=30 \
+  		--set controller.livenessProbe.periodSeconds=30 \
+		--set controller.kind=DaemonSet \
+  		--set controller.nodeSelector.eoffice=node03 \
+  		--version 1.17.5  	
+
+>$ helm upgrade --install nginxinc-01 nginx-ingress \
+  		--repo https://helm.nginx.com/stable \
+  		--namespace masjid-01 \
+		--create-namespace \
+		--set controller.service.nodePorts.http=30000 \
+  		--set controller.service.nodePorts.https=30001 \
+  		--set controller.service.nodePorts.stat=30002 \
+  		--set controller.kind=DaemonSet \
+  		--set controller.nodeSelector.eoffice=node03 \
+  		--version 2.0.3 	
+
+>$ helm upgrade --install nginxinc-01 nginx-ingress \
+  		--repo https://helm.nginx.com/stable \
+  		--namespace masjid-01 \
+		--create-namespace \
+		--set controller.service.nodePorts.http=30000 \
+  		--set controller.service.nodePorts.https=30001 \
+  		--set controller.service.nodePorts.stat=30002 \
+  		--set controller.kind=DaemonSet \
+  		--set controller.nodeSelector.eoffice=node03 
